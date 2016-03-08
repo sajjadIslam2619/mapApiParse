@@ -88,7 +88,7 @@ public class Map_api_parse {
                                     }
                                 }
                                 if (ad_level_3 == true) {
-                                    System.out.println(" dfsdfs" + place_ad_level_3);
+                                    //System.out.println(" dfsdfs" + place_ad_level_3);
                                 }
                                 //System.out.println("getFormattedAddress " + place_formatted_address);
                                 String palce_NE_lat = "" + googleMapApiLatLngToUpazila.getResults().get(0).getGeometry().getBounds().getNortheast().getLat();
@@ -96,7 +96,7 @@ public class Map_api_parse {
                                 String place_SW_lat = "" + googleMapApiLatLngToUpazila.getResults().get(0).getGeometry().getBounds().getSouthwest().getLat();
                                 String place_SW_lng = "" + googleMapApiLatLngToUpazila.getResults().get(0).getGeometry().getBounds().getSouthwest().getLng();
                                 String status = "OK";
-                                System.out.println(" ..................................");
+                                //System.out.println(" ..................................");
 
                                 File file = new File("DATA\\parsed_map_api_data.txt");
                                 if (!file.exists()) {
@@ -104,7 +104,7 @@ public class Map_api_parse {
                                 }
                                 fw = new FileWriter(file, true);
                                 bw = new BufferedWriter(fw);
-
+                                /*
                                 fw.append("status" + " " + status + " "
                                         + "country" + " " + place_country + " "
                                         + "date" + " " + date_extraInfo + " "
@@ -121,20 +121,53 @@ public class Map_api_parse {
                                         + "SPLITER"
                                         +"\n"
                                 );
+                                */
+                                System.out.println("status" + " " + status + " "
+                                        + "country" + " " + place_country + " "
+                                        + "date" + " " + date_extraInfo + " "
+                                        + "lat" + " " + lat_extraInfo + " "
+                                        + "lng" + " " + lng_extraInfo + " "
+                                        + "palce_NE_lat" + " " + palce_NE_lat + " "
+                                        + "palce_NE_lng" + " " + palce_NE_lng + " "
+                                        + "place_SW_lat" + " " + place_SW_lat + " "
+                                        + "place_SW_lng" + " " + place_SW_lng + " "
+                                        + "place_ad_level_1" + " " + place_ad_level_1 + " "
+                                        + "place_ad_level_2" + " " + place_ad_level_2 + " "
+                                        + "place_ad_level_3" + " " + place_ad_level_3 + " "
+                                        + "place_formatted_address" + " " + place_formatted_address + " "
+                                        + "SPLITER"
+                                        +"\n");
+                                
+                                fw.append(status + " "
+                                        + "#" + " " + place_country + " "
+                                        + "#" + " " + date_extraInfo + " "
+                                        + "#" + " " + lat_extraInfo + " "
+                                        + "#" + " " + lng_extraInfo + " "
+                                        + "#" + " " + palce_NE_lat + " "
+                                        + "#" + " " + palce_NE_lng + " "
+                                        + "#" + " " + place_SW_lat + " "
+                                        + "#" + " " + place_SW_lng + " "
+                                        + "#" + " " + place_ad_level_1 + " "
+                                        + "#" + " " + place_ad_level_2 + " "
+                                        + "#" + " " + place_ad_level_3 + " "
+                                        + "#" + " " + place_formatted_address + " "
+                                        + "SPLITER"
+                                        +"\n"
+                                );
                             } else {
-                                fw.append("status" + " " + "null" + " "
-                                        + "country" + " " + "null" + " "
-                                        + "date" + " " + "null" + " "
-                                        + "lat" + " " + "null" + " "
-                                        + "lng" + " " + "null" + " "
-                                        + "palce_NE_lat" + " " + "null" + " "
-                                        + "palce_NE_lng" + " " + "null" + " "
-                                        + "place_SW_lat" + " " + "null" + " "
-                                        + "place_SW_lng" + " " + "null" + " "
-                                        + "place_ad_level_1" + " " + "null" + " "
-                                        + "place_ad_level_2" + " " + "null" + " "
-                                        + "place_ad_level_3" + " " + "null" + " "
-                                        + "place_formatted_address" + " " + "null" + " "
+                                fw.append("null" + " "
+                                        + "#" + " " + "null" + " "
+                                        + "#" + " " + "null" + " "
+                                        + "#" + " " + "null" + " "
+                                        + "#" + " " + "null" + " "
+                                        + "#" + " " + "null" + " "
+                                        + "#" + " " + "null" + " "
+                                        + "#" + " " + "null" + " "
+                                        + "#" + " " + "null" + " "
+                                        + "#" + " " + "null" + " "
+                                        + "#" + " " + "null" + " "
+                                        + "#" + " " + "null" + " "
+                                        + "#" + " " + "null" + " "
                                         + "SPLITER"
                                         +"\n");
                             }
@@ -146,7 +179,7 @@ public class Map_api_parse {
                             place_ad_level_2 = null;
                             place_ad_level_3 = null;
                             place_country = null;//place_formatted_address=null;
-                            System.out.println(" ");
+                            //System.out.println(" ");
                             bw.close();
                         } finally {
                             continue;
